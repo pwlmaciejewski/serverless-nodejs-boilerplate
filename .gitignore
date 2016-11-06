@@ -1,0 +1,4 @@
+.serverless
+.serverless_hooks
+serverless.env.yml
+node_modules

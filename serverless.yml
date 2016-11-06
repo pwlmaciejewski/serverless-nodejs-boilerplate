@@ -1,0 +1,55 @@
+service: test-service-1
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+  stage: ${file(./serverless.env.yml):stage}
+  region: ${file(./serverless.env.yml):region}
+  credentials:
+    accessKeyId: ${file(./serverless.env.yml):accessKeyId}
+    secretAccessKey: ${file(./serverless.env.yml):secretAccessKey}
+
+package:
+  individually: true
+
+plugins:
+  - serverless-scriptable-plugin
+
+custom: 
+  scriptHooks:
+    before:deploy:function:deploy: "deployment_hooks/before_deploy_function.js"
+    after:deploy:function:deploy: "deployment_hooks/after_deploy_function.js"
+    before:deploy:createDeploymentArtifacts: "deployment_hooks/before_deploy_create_deployment_artifacts.js"
+    after:deploy:createDeploymentArtifacts: "deployment_hooks/after_deploy_create_deployment_artifacts.js"
+
+functions:
+  foo:
+    handler: functions/foo/handler.foo
+    package:
+      exclude:
+        - "!functions/foo/**/*"
+    events:
+      - http:
+          path: foo
+          method: get
+
+  bar:
+    handler: functions/bar/handler.bar
+    package:
+      exclude:
+        - "!functions/bar/**/*"
+    events:
+      - http:
+          path: bar
+          method: get
+
+  buildExample:
+    handler: functions/build-example/handler.buildExample
+    package:
+      exclude:
+        - "!functions/build-example/**/*"
+    events:
+      - http:
+          path: build-example
+          method: get
+    

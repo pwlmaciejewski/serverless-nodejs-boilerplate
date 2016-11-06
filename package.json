@@ -1,0 +1,15 @@
+{
+  "name": "serverless-playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "serverless-scriptable-plugin": "^0.3.0",
+    "shelljs": "^0.7.5"
+  }
+}

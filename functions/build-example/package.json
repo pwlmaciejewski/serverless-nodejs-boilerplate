@@ -1,0 +1,25 @@
+{
+  "name": "build-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "build-clean": "rm -rf ./handler.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-rewire": "^1.0.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-template": "^6.16.0",
+    "babel-types": "^6.16.0",
+    "json-loader": "^0.5.4",
+    "webpack": "^1.13.2",
+    "webpack-node-externals": "^1.3.3"
+  }
+}
