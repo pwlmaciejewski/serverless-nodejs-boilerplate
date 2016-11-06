@@ -23,33 +23,33 @@ custom:
     after:deploy:createDeploymentArtifacts: "deployment_hooks/after_deploy_create_deployment_artifacts.js"
 
 functions:
-  foo:
-    handler: functions/foo/handler.foo
+  basic:
+    handler: functions/basic/handler.foo
     package:
       exclude:
-        - "!functions/foo/**/*"
+        - "!functions/basic/**/*"
     events:
       - http:
-          path: foo
+          path: basic
           method: get
 
-  bar:
-    handler: functions/bar/handler.bar
+  basicWithDeps:
+    handler: functions/basic-with-deps/handler.bar
     package:
       exclude:
-        - "!functions/bar/**/*"
+        - "!functions/basic-with-deps/**/*"
     events:
       - http:
-          path: bar
+          path: basic-with-deps
           method: get
 
-  buildExample:
-    handler: functions/build-example/handler.buildExample
+  buildWithInternalDevDeps:
+    handler: functions/build-with-internal-dev-deps/handler.buildExample
     package:
       exclude:
-        - "!functions/build-example/**/*"
+        - "!functions/build-with-internal-dev-deps/**/*"
     events:
       - http:
-          path: build-example
+          path: build-with-internal-dev-deps
           method: get
     
