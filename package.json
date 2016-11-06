@@ -9,7 +9,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "json-loader": "^0.5.4",
     "serverless-scriptable-plugin": "^0.3.0",
-    "shelljs": "^0.7.5"
+    "shelljs": "^0.7.5",
+    "webpack": "^1.13.3",
+    "webpack-node-externals": "^1.5.4"
   }
 }

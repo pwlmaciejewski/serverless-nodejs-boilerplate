@@ -1,0 +1,16 @@
+{
+  "name": "build-with-external-dev-deps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler_src.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "build-clean": "rm -rf handler.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "is-it-thursday": "^0.1.0"
+  }
+}

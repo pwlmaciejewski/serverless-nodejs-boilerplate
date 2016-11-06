@@ -52,4 +52,14 @@ functions:
       - http:
           path: build-with-internal-dev-deps
           method: get
+
+  buildWithExternalDevDeps:
+    handler: functions/build-with-external-dev-deps/handler.buildExample
+    package:
+      exclude:
+        - "!functions/build-with-external-dev-deps/**/*"
+    events:
+      - http:
+          path: build-with-external-dev-deps
+          method: get
     
